@@ -1,10 +1,13 @@
 
 /*
+set evironnement variable:
+Control Panel\System and Security\System
+->advanced system properties->environnement variables
 =================Start Coinnection=======================
 C:\Users\Emchris>cd c:\Program Files (x86)\MongoDB\bin
--->mongod.exe
+as admin-->mongod.exe
 C:\Users\Emchris>cd c:\Program Files (x86)\MongoDB\bin
--->mongo.exe
+as admin-->mongo.exe
 ================== Start GUI=======================
 -->Studio 3T <==
 name your new connection
@@ -12,16 +15,27 @@ Save
 connect
 IntelliShell
 */
+//database ->Collections->Documents
 
-use school //create if not exists or use it
+//create database
+use school //create database if not exists or use it
+//1-run db to list current database
+//2-show dbs to list all databases that content documents inserted.
+//3-create collection
+db.createCollection("teachers")
 db.createCollection("students")
 show collections
 
+//delete a collection or a current database 
 db.students.drop()
+db.teachers.drop()
+db.dropDatabase()
 
-
+//add one document
+db.teachers.insert({"name":"Corrine", "age": "35"})
 db.students.insert({"name":"Karen", "age": "19"})
 
+//add multi documents with array-json
 db.students.insert([
 			{"name":"Jean",
 			   "age": "39"},
