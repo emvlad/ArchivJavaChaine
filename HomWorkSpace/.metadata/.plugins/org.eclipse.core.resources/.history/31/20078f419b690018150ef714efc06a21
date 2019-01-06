@@ -1,0 +1,65 @@
+package ModifierPlan1;
+
+import java.util.StringJoiner;
+
+public class ChangePoint {
+	
+	//1-Enter les données séparées par un semi-colonne
+	public void SortieSemiClou(String chaine1, String chaine2, String chaine3) {
+		
+		//create tempObject string-joiner
+		StringJoiner strjTemp = new StringJoiner(":");
+		
+		//ajouter des chaines
+		strjTemp.add(chaine1)
+				.add(chaine2)
+				.add(chaine3);
+		
+		//préparer la sortie des chaines
+		String strData = strjTemp.toString();
+		System.out.println("\n La sortie est réussie avec semi-colonne : " + strData);
+		
+	}	
+	//1.1-Enter les données séparées par un semi-colonne
+		public static void JoinSemiClou(String chaine1, String chaine2, String chaine3)  {
+
+			//create tempObject string-joiner
+			String strjFinale = String.join(":",chaine1,chaine2,chaine3);
+			System.out.println("\n Join Réussi avec semi-colonne : " + strjFinale);
+
+
+		}
+	
+		//2- Augmenter la longueur d'une chaine
+		
+		//3- Inserrer un caractère dans une position exacte
+		
+		//4-Effacer un caractère dans une position exacte
+		
+		//4.1- Effacer un carcatère d'une position à une autre
+		
+		//5-Remplacer des caracteres d'une position à une autre
+		
+		//6-Former une chaine avec d'autres chaines
+		//7- Augmenter la longueur d'une chaine
+		
+		//8-Changer un caractère dans une position exacte
+		
+		//8.1-Changer un bloc de caratère
+		
+		//9- Séparer les données par un semi-colonne
+		
+		//10- Construire un mot de passe avec plusieurs chaines
+		
+		//11-Inverser des carcteres dans une chaine
+		
+		//12- Changer le caractere en minuscule
+		
+		
+		//13-  Changer le caractere en majuscule
+		
+		//14- Convertir une valeur en nombre entier
+		
+		//15- remplacer les espaces par un point virgule
+
+}

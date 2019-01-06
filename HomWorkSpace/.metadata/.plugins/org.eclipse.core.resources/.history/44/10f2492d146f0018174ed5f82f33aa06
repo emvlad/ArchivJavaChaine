@@ -1,0 +1,51 @@
+package ModifierPlan2;
+
+
+public class StrModification3 {
+
+	public static void main(String[] args) {
+		
+		String chaine = "La chaine en copie.";
+		String ch1, ch2;
+	
+	//1-remplacer la première occurence (replaceFirst()).
+		 ch1 ="ai";
+		 String chainOccur  = chaine.replaceFirst(ch1, "ê");
+		 System.out.println("\n1-Remplacer la première occurence de la chaine \'" +ch1 + "\' : " + chainOccur);
+		
+	//2-remplacer toutes les occurences (replaceAll()).	 	
+		  ch1 ="i";
+		  ch2 = "y";
+		 chaine  = chaine.replaceAll(ch1, ch2);
+		 System.out.println("\n2-Remplacer toutes les occurences du caractère \'" +ch1 + "\': " + chaine);
+	
+	//3-recevoir un caractère dans une position exacte (charAt()).
+		 int pos =1;
+		 char car = chaine.charAt(pos);
+		 System.out.println("\n3-Le caractère reçu à l'index \'" + pos + "\' est: " + car +".");
+	
+	//4-recevoir la position d'un caractère ou d'une chaine à la dernière occurence (lastIndexOf()).
+		 String feed ="ye";
+		 int lastOccur = chaine.lastIndexOf(feed);
+		 System.out.println("\n4-La position de la dernière occurence\n du caractère"
+		 		+ " ou de la chaine \'" + feed + "\'  est: " + lastOccur +".");
+		//4.1-la position du char jusqu'à un point précis du caractère ou de la chaine 
+		 feed = "e";
+		 pos=12;
+		
+		 int lastOccPoint = chaine.lastIndexOf(feed, pos);
+		 System.out.println("\n4.1-La position de la dernière occurence\n"
+		 		+ " jusqu'à la position \'" + pos+ "\' "
+		 				+ "du caractère ou de la chaine \'" + feed + "\' est: " + lastOccPoint +".");
+	
+	//5-recevoir la position de la première occurence à partir d'une position
+		 feed ="a";
+		 pos =2;
+		
+		 int firstOccur = chaine.indexOf(feed, pos);
+		 System.out.println("\n5-La position de la première occurence\n "
+		 		+ "à partir de la position \'" + pos+ "\' "
+		 				+ "du caractère ou de la chaine \'" + feed + "\' est: "  + firstOccur +".");
+		 
+	}	
+}

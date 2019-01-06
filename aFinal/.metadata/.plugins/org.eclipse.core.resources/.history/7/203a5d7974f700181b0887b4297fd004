@@ -1,0 +1,30 @@
+package ServerWebClient;
+
+import java.net.Socket;
+
+public class StandBy extends Thread {
+
+	private Socket transmitSocket; //instance transmitter
+
+	public StandBy(Socket transmitSocket) {
+		this.transmitSocket = transmitSocket; // transmitter initiated
+	}
+
+	@Override
+	public void run() {
+
+		// relier les transferts du client avec le transmetteur
+		LiaisonClient liaisonClient = new LiaisonClient(transmitSocket);
+
+		// stocker l'entête de chaque transfert
+		String fileHeader = liaisonClient.getHeader();
+
+		// Rependre l'entête au client
+		liaisonClient.echoServer(fileHeader);
+
+		// fermer le débit des transferts
+		liaisonClient.closeDebit();
+
+	}
+
+}

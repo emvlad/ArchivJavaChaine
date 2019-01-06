@@ -1,0 +1,22 @@
+package ModifierPlan1;
+
+
+
+public class StrModification {
+
+	public static void main(String[] args) {
+		
+		
+		char car1 = '8';
+		char car2 = 'A';
+		char car3 = 'c';
+		char carVide=' ';
+		boolean confirm = false;
+		ChangePoint chng = new ChangePoint();
+	
+		
+
+	}
+	//12- Changer le caractere en minuscule
+
+}

@@ -1,0 +1,21 @@
+package VerifierPlan1;
+
+public class StringVerification {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String strCheck = "La maison de l'algorithme du succès ";
+		//1-Vérifier la terminaison d'une chaine (boolean endsWith()).
+		
+		String ending ="succès";
+		if(strCheck.endsWith(ending)) {
+			
+			System.out.println("La chaine se termine par : " + ending);
+			
+		}
+	
+		
+	}
+
+}

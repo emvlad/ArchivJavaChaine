@@ -1,0 +1,34 @@
+package VerifierPlan2;
+
+public class CheckPoint {
+
+
+	//1-est-ce une valeur numérique?
+	public static boolean  isCarDigit(char car) {
+
+		boolean confirmDigit = false;
+
+		if(Character.isDigit(car)) {
+			confirmDigit = true;
+		}
+		return confirmDigit;
+
+	}
+
+	//2-est-ce une valeur alphabétique?
+
+
+	//3-est-ce une valeur alphabétique ou numérique?
+
+
+	//4-est-ce une valeur en minuscule?
+
+
+	//5-est-ce une valeur en majuscule?
+
+
+	//6-est-ce qu'il s'agit d'une chaine vide?
+
+
+
+}

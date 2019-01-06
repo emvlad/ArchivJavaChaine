@@ -1,0 +1,42 @@
+package ServerWebClient;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class ReadFile {
+
+	private static final String FILE_PATH = "../siteHTTP";
+
+	public static String LectFile(String fileName) {
+		
+		//lire le fichier et le mettre en mémoire de lecture
+
+		try ( BufferedReader buffer = new BufferedReader(new FileReader(FILE_PATH + fileName ))) {
+			
+			String content = ""; //tampon intégral du fichier
+			String readCurrentLine; //tampon de chaque ligne en cours du fichier
+
+			while ((readCurrentLine = buffer.readLine()) != null) {
+				
+				content += readCurrentLine + "\r\n";
+			}
+			
+			
+			return content;
+			
+
+		}
+		catch (IOException e) {
+			
+			//e.printStackTrace();
+			
+			return "Erreur 404";
+			
+			
+		}
+		
+		
+	}
+	
+}

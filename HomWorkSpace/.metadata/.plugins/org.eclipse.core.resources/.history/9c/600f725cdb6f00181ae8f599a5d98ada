@@ -1,0 +1,42 @@
+package VerifierPlan1;
+
+public class StringVerification {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String str = "   Maisons  ";
+		//1-Vérifier la terminaison d'une chaine (boolean endsWith()).
+		
+		String strCheck =str.trim();
+		String ending ="son";
+		String starting = "Mi";
+		String contient ="ai";
+		
+		if(strCheck.endsWith(ending)) {
+			
+			System.out.println("1-La chaine se termine par : \'" + ending + "\'");
+			
+			//continuité imbriquée ou enfant du premier choix 
+			//si le premier choix est vérifié - continuer avec la condition imbriquée
+			if(strCheck.contains(contient)) {
+				System.out.println("\n1.1- Elle contient aussi les caractères: \'" + contient +"\'");
+			}
+							
+		}
+		//alternatif ou d'autres options seulement à défaut du premier choix
+		else if(strCheck.startsWith(starting)) {
+			System.out.println("2-La chaine commence par : \'" + starting + "\'");
+		}
+		else {
+			System.out.println("-Errors! " );
+		} 
+		
+		
+	
+		
+		
+		
+	}
+
+}

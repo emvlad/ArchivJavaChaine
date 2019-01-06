@@ -1,0 +1,44 @@
+package VerifierPlan2;
+
+public class CharVerification {
+
+	public static void main(String[] args) {
+		
+		char car1 = '8';
+		char car2 = 'A';
+		boolean confirm = false;
+		
+		//1-est-ce une valeur numérique?		
+		confirm = isCharDigit(car1);
+		if(confirm) {
+			System.out.println("C\'est une valeur numérique");
+		}
+		
+		if(!CheckPoint.isCarDigit(car2)) {
+			System.out.println("\nCe n'est pas une valeur numérique");
+		};
+		boolean check;
+		check = CheckPoint.isCarDigit(car2);
+		if(!check) {
+			System.out.println("\nCette valeur  n'est pas numérique");
+		};
+		
+		//2-
+
+	}
+	
+	//1-est-ce une valeur numérique?
+	public static boolean  isCharDigit(char car) {
+		
+		boolean confirmDigit = false;
+		
+		if(Character.isDigit(car)) {
+			confirmDigit = true;
+		}
+		return confirmDigit;
+		
+	}
+	
+	
+
+}

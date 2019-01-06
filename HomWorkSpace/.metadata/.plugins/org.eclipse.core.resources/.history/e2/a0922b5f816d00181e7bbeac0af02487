@@ -1,0 +1,94 @@
+package ModifierPlan2;
+
+
+
+public class StrModification2 {
+
+	public static void main(String[] args) {
+		
+		String chaine = "12 Ceci est une chaine";
+		String chaine2 = "Une petite chaine";
+		String strAccueil ;
+		Double dbl = 789.99;
+		ChangePoint2 chgp = new ChangePoint2();
+		
+		//1- décomposer chaine en tableau
+		ChaineTabelau(chaine);
+		ChangePoint2.chaineTabelau(chaine2);
+		
+		//2-Supprimer les espaces dans une chaine
+		EnlevEspaceCh(chaine);
+		chgp.enlevEspaceCh(chaine2);
+	
+		//3-Extraire la partie à droite d'une chaine à partir d'un point fixe
+		ExtrairePortion(chaine2, 6);
+		
+		//3.1-Extraire un segment d'une cahine entre deux points fixes
+		ExtraireSegment(chaine2, 6, 11);
+		
+		//4- Convertir une valeur type double en string
+		strAccueil = ChangValenString(dbl);
+		
+		//5-Obtenir la position d'un caractère dans une chaine
+		ObtenirPosChar(strAccueil, '.');
+
+	}
+	//1- décomposer chaine en tableau
+	private static void ChaineTabelau(String chaine) {
+		
+		String [] tabChaine = chaine.split(" ");
+		for(int i = 0; i<tabChaine.length; i++) {
+			System.out.print(" " + tabChaine[i]);
+		};
+		System.out.println("\nNombre de cellule de la table (taille) : " + tabChaine.length + "\n");
+			
+		
+	}
+	
+	//2-Supprimer les espaces dans une chaine
+	private static void EnlevEspaceCh(String chaine) {
+		
+		String trmChaine = chaine.trim();
+		
+		System.out.println("\nSans espace dans les extrémités mais contient toujours : \'" + trmChaine + "\'" );
+	}
+	
+	//3-Extraire la partie à droite d'une chaine à partir d'un point fixe
+	private static void ExtrairePortion(String chaine, int indiceDeaprt) {
+		
+		String portionDrPtFix = chaine.substring(indiceDeaprt);
+		System.out.println("\nLa portion extraite de gauche à droite : " + portionDrPtFix);
+		
+	}
+	//3.1-Extraire un segment d'une cahine entre deux points fixes
+		private static void ExtraireSegment(String chaine, int indiceDeaprt, int indiceFin) {
+			
+			String segmentPtExacts = chaine.substring(indiceDeaprt, indiceFin);
+			System.out.println("\nLe segment extrait entre deux indices : " + segmentPtExacts);
+					
+		}
+		
+	//4- Convertir une valeur type double en string
+		private static String ChangValenString(Double valDble) {
+			
+			String convertValeur = String.valueOf(valDble);
+			System.out.println("\nLa valeur n'est plus de type double mais string : \'" + convertValeur + "\'" );
+			
+			return convertValeur;
+			
+			
+		}
+		//5-Obtenir la position d'un caractère dans une chaine
+		
+		private static void ObtenirPosChar(String chaine, char carLoc) {
+			
+			int posCarLoc =0;
+			
+			posCarLoc = chaine.indexOf(carLoc);
+			
+			System.out.println("\nL\'indice à localiser du caractère \' "+ carLoc + "\' est : " + posCarLoc);
+			
+		}
+	
+	
+}

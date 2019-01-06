@@ -1,0 +1,75 @@
+package VerifierPlan2;
+
+public class CheckPoint {
+
+
+	//1-est-ce une valeur numérique - méthode statique?
+	public static boolean  isCarDigit(char car) {
+
+		boolean confirmDigit = false;
+
+		if(Character.isDigit(car)) {
+			confirmDigit = true;
+		}
+		return confirmDigit;
+
+	}
+	//méthode non statique!
+	public boolean isThatDigit(char car) {
+
+		boolean confirmDigit = false;
+
+		if(Character.isDigit(car)) {
+			confirmDigit = true;
+		}
+		return confirmDigit;
+
+	}
+	
+	//2-est-ce une valeur alphabétique?
+	public static boolean isAlphabet(char car) {
+		
+		boolean validAlph = false;
+		if(Character.isLetter(car)) {
+			validAlph = true;
+		}
+				
+		return validAlph;
+		
+	}
+	//3-est-ce une valeur alphabétique ou numérique?
+	public boolean isAlphaNum(char car) {
+		
+		boolean validAlphNum = false;
+		if(Character.isLetterOrDigit(car)) {
+			validAlphNum = true;
+			System.out.println("\nThe character << "+ car + " >> is an alphaNumeric.");
+		}
+		
+		return validAlphNum;
+		
+		
+	}
+	//4-est-ce une valeur en minuscule?
+	
+	public static void  isMinuscule(char ch) {
+
+		if(Character.isLowerCase(ch)) {
+			System.out.println("\nThe character << "+ ch + " >> is a lower-case.");
+					
+		} else {
+			System.out.println("\nThe character << "+ ch + " >> is not a lower-case.");
+			
+		}
+	
+	
+	}
+	
+	//5-est-ce une valeur en majuscule?
+	
+	
+	
+
+
+	//6-est-ce qu'il s'agit d'une chaine vide?
+}

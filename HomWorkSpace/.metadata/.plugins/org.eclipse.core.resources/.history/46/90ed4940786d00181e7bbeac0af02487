@@ -1,0 +1,37 @@
+package ModifierPlan2;
+
+
+
+public class StrModification2 {
+
+	public static void main(String[] args) {
+		
+		String chaine = "12 Ceci est une chaine";
+		
+		chaineTabelau(chaine);
+		
+		
+		//1- décomposer chaine en tableau
+		
+	
+		
+
+	}
+	//1- décomposer chaine en tableau
+	private static void chaineTabelau(String chaine) {
+		
+		String [] tabChaine = chaine.split(" ");
+		for(int i = 0; i<tabChaine.length; i++) {
+			System.out.print(" " + tabChaine[i]);
+		};
+		System.out.println("\nTaille de la table : " + tabChaine.length);
+		System.out.println("\nNombre de cellule de la table : " + tabChaine.length - 1);
+		
+		
+		
+		
+		
+	}
+	
+	
+}

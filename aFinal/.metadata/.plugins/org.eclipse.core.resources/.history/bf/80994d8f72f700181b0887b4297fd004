@@ -1,0 +1,100 @@
+package ServerWebClient;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+
+public class LiaisonClient {
+
+	Socket transmitter = null; // attribuer le tampon de la voie des transferts du client-server
+
+	BufferedReader entree = null; // attribuer le tampon du débit d'entrée des transferts
+	PrintWriter pub = null; // attribuer le tampon du débit de sortie des transferts
+
+	/**
+	 * Construire un objet qui représente une connexion du client qui reçoit en paramètre
+	 *  d'une socket d'échange.
+	 */
+	LiaisonClient(Socket transmitter) {
+
+		this.transmitter = transmitter;
+
+		try {
+
+			// embarquer les tampons de débits d'entrées et de sorties
+			pub = new PrintWriter(transmitter.getOutputStream());
+			entree = new BufferedReader(new InputStreamReader(this.transmitter.getInputStream()));
+			
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+
+	}
+
+	/**
+	 * Lire la requête HTTP se trouvant dans le débit d'entrée transmis et
+	 * l'affichée sur la console
+	 */
+
+	public String getHeader() {
+		String fileHeader = "/default";
+		String cryptHeader = null; //tampon intégral des lignes d'entête
+
+		try {
+
+			String firstDebit = entree.readLine();
+
+			fileHeader = firstDebit.split(" ")[1];
+
+			// lire toutes les lignes de l'entête http.
+			while ((cryptHeader = entree.readLine()).compareTo("") != 0) {
+				
+				System.out.println("Accept: " + cryptHeader + "\n");
+
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return fileHeader;
+
+	}
+
+	/* Réponse du serveur au client en format HTTP */
+
+	void echoServer(String fileName) {
+
+		// préparer le corps de la réponse
+		String replyFile = ReadFile.LectFile(fileName);
+
+		// retrouver la longueur du corps de la réponse
+		int len = replyFile.length();
+
+		// écrire les entêtes
+		pub.print("HTTP/1.0 200 OK\r\n");
+		pub.print("Content-Length: " + len + "\r\n");
+		pub.print("Content-Type: text/html\r\n\r\n\n"); // placer la ligne vide
+
+		// passer la réponse
+		pub.print(replyFile);
+
+		// alignement
+		pub.flush();
+
+	}
+
+	/**
+	 * Fermer le débit des transferts
+	 */
+	void closeDebit() {
+		try {
+			entree.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

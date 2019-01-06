@@ -1,0 +1,17 @@
+package ModifierPlan2;
+
+
+public class StrModification3 {
+
+	public static void main(String[] args) {
+		
+		String chaine = "La chaine en copie";
+	
+		//1-Copier les caractères d'une chaine 
+		//pour les placer dans une table de type approprié
+		
+		
+		System.out.println(chaine);
+	
+	}	
+}

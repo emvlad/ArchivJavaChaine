@@ -1,0 +1,18 @@
+package ModifierPlan2;
+
+public class ChangePoint2 {
+	
+	
+	//1- décomposer chaine en tableau
+		public static void chaineTabelau(String chaine) {
+			
+			String [] tabChaine = chaine.split(" ");
+			for(int i = 0; i<tabChaine.length; i++) {
+				System.out.print(" " + tabChaine[i]);
+			};
+			System.out.println("\nTaile de la table(nbre cellules) : " + tabChaine.length);
+				
+			
+		}
+
+}

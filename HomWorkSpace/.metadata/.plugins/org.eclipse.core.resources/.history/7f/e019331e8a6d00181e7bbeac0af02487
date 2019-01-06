@@ -1,0 +1,16 @@
+package ModifierPlan2;
+
+
+public class StrModification3 {
+
+	public static void main(String[] args) {
+		
+		String chaine = "La chaine en copie";
+	
+		
+		
+		
+	
+	
+	}	
+}

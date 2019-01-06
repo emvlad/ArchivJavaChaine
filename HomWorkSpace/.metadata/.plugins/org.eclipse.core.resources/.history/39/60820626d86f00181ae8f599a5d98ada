@@ -1,0 +1,23 @@
+package VerifierPlan1;
+
+public class StringVerification {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String strCheck = "Maison ";
+		//1-Vérifier la terminaison d'une chaine (boolean endsWith()).
+		
+		String ending ="son";
+		if(strCheck.endsWith(ending)) {
+			
+			System.out.println("La chaine se termine par : " + ending);
+			
+		}else {
+			System.out.println("La chaine ne se termine par : " + ending);
+		}
+	
+		
+	}
+
+}

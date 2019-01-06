@@ -1,0 +1,190 @@
+package ModifierPlan2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class StrModification2 {
+
+	public static void main(String[] args) {
+
+		String chaine = "12 Ceci est une chaine";
+		String chaine2 = "Une petite chaine";
+		String strAccueil ;
+		Double dbl = 789.99;
+		ChangePoint2 chgp = new ChangePoint2();
+
+
+		//1- décomposer chaine en tableau
+		ChaineTabelau(chaine);
+		ChangePoint2.chaineTabelau(chaine2);
+
+		//2-Supprimer les espaces dans une chaine
+		EnlevEspaceCh(chaine);
+		chgp.enlevEspaceCh(chaine2);
+
+		//3-Extraire la partie à droite d'une chaine à partir d'un point fixe
+		ExtrairePortion(chaine2, 6);
+
+		//3.1-Extraire un segment d'une cahine entre deux points fixes
+		ExtraireSegment(chaine2, 6, 11);
+
+		//4- Convertir une valeur type double en strObtenue
+		strAccueil = ChangValenString(dbl);
+
+		//5-Obtenir la position d'un caractère dans une chaine
+		int posLocate = ObtenirPosChar(strAccueil, '.');
+
+
+		//6-Obtenir une valeur et la convertir en type Double
+		String strPart = strAccueil.substring(posLocate);
+		Double valDouble = ChangValenDouble(strPart);
+		System.out.println("\nLa partie obtenue \'" + strPart + "/' est convertie en double : " + valDouble);
+
+
+		//7-Construire une chaine à partir d'indice d'une table
+
+
+		//7.1-Construire une chaine à partir des valeurs des cellules d'une table
+
+
+		//8-Utilistation foreach: 
+		//8.1-composer en liste
+		List<String> list = new ArrayList<String>();
+		list.add(chaine2);
+
+		//a)sans foreach
+		System.out.println("\nCette liste est affichée sans foreach : " + list);
+
+		//b)avec foreach
+		for (String strTyp : list)
+		{
+			System.out.println("\nCette liste est affichée avec foreach : " + strTyp);
+		}
+
+
+		//8.2-décomposer en table chaine
+		String [] tabChain = chaine2.split(" ");
+		
+		StringBuilder strChain = new StringBuilder();
+		//strChainBuild :append - setLenght- reverse
+		//(indice, insert - replace - delete - setCharAt- deleteCharAt).
+
+		for (String strTab : tabChain) //not to display table but each cell.
+		{
+			strChain.append(strTab) ;
+			strChain.append(" ") ;  
+
+		}
+		System.out.print("\nChaque cellule de cette table est affichée avec foreach-strChainBuild-Append: " + strChain );
+
+		System.out.println("\nTaille tabChaineSplit: " + tabChain.length);
+		System.out.println("Taille chaine: " + chaine2.length());
+
+
+		System.out.println();
+
+
+		//8.3-composer en table caractère
+		boolean cellTabValid = false;
+		char [] tbAccTyp = chaine2.toCharArray();
+
+		//pour chaque caractère dans la table d'accueilTyp		
+		for(char eachCell: tbAccTyp) {
+
+			//si le caractère dans chaque cellule est une lettre
+			if(Character.isLetter(eachCell)) {
+				cellTabValid = true;
+			}
+		}
+
+		if(cellTabValid)
+			System.out.println("\nValidation: Chaque cellule du tableau contient des caractères alphabétiques.");
+		System.out.println("\nTaille tabChar: " + tbAccTyp.length);
+		System.out.println("Taille chaine: " + chaine2.length());
+
+
+
+	}//fin class
+
+
+	/*
+	 * Les méthodes statics de cette classe
+	 * 
+	 */
+	//1- décomposer chaine en tableau (chain.split()).
+	private static void ChaineTabelau(String chaine) {
+
+		String [] tabChaine = chaine.split(" ");
+		for(int i = 0; i<tabChaine.length; i++) {
+			System.out.print(" " + tabChaine[i]);
+		};
+		System.out.println("\nNombre de cellule de la table (taille) : " + tabChaine.length + "\n");
+
+
+	}
+
+	//2-Supprimer les espaces dans une chaine (chain.trim()).
+	private static void EnlevEspaceCh(String chaine) {
+
+		String trmChaine = chaine.trim();
+
+		System.out.println("\nSans espace dans les extrémités mais contient toujours : \'" + trmChaine + "\'" );
+	}
+
+	//3-Extraire la partie à droite d'une chaine à partir d'un point fixe (substring()).
+	private static void ExtrairePortion(String chaine, int indiceDeaprt) {
+
+		String portionDrPtFix = chaine.substring(indiceDeaprt);
+		System.out.println("\nLa portion extraite de gauche à droite : " + portionDrPtFix);
+
+	}
+	//3.1-Extraire un segment d'une cahine entre deux points fixes (substring()).
+	private static void ExtraireSegment(String chaine, int indiceDeaprt, int indiceFin) {
+
+		String segmentPtExacts = chaine.substring(indiceDeaprt, indiceFin);
+		System.out.println("\nLe segment extrait entre deux indices : " + segmentPtExacts);
+
+	}
+
+	//4- Convertir une valeur type double en string(valueOf())
+	private static String ChangValenString(Double valDble) {
+
+		String convertValeur = String.valueOf(valDble);
+		System.out.println("\nLa valeur n'est plus de type double mais string : \'" + convertValeur + "\'" );
+
+		return convertValeur;
+
+
+	}
+	//5-Obtenir la position d'un caractère dans une chaine (indexOf()).
+
+	private static int ObtenirPosChar(String chaine, char carLoc) {
+
+		int posCarLoc =0;
+
+		posCarLoc = chaine.indexOf(carLoc);
+
+		System.out.println("\nL\'indice pour trouver le caractère \'"+ carLoc + "\' est : " + posCarLoc);
+		return posCarLoc;
+
+	}
+
+	//6-Changer une valeur en Double
+	private static Double ChangValenDouble(String strPart) {
+		
+		Double dblVal = Double.parseDouble(strPart);
+		
+		return dblVal;
+		
+	}
+
+
+	//7-Construire une chaine à partir d'indice d'une table
+
+
+	//7.1-Construire une chaine à partir des valeurs des cellules d'une table
+
+
+
+
+}

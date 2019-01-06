@@ -1,0 +1,194 @@
+package ModifierPlan1;
+
+import java.util.StringJoiner;
+
+public class ChangePoint {
+
+	//1-Enter les données séparées par un semi-colonne
+	public void SortieSemiClou(String chaine1, String chaine2, String chaine3) {
+
+		//a) create tempObject string-joiner
+		StringJoiner strjTemp = new StringJoiner(":");
+
+		//b) ajouter des chaines
+		strjTemp.add(chaine1)
+		.add(chaine2)
+		.add(chaine3);
+
+		//c) préparer la sortie des chaines
+		String strData = strjTemp.toString();
+		System.out.println("\n La sortie est réussie avec semi-colonne : " + strData);
+
+	}	
+	//1.1-Enter les données séparées par un semi-colonne
+	public static void JoinSemiClou(String chaine1, String chaine2, String chaine3)  {
+
+		//create tempObject string-joiner
+		String strjFinale = String.join(":",chaine1,chaine2,chaine3);
+		//print-out
+		System.out.println("\n Join Réussi avec semi-colonne : " + strjFinale);
+
+
+	}
+
+	//2- Augmenter la longueur d'une chaine
+	public void augmentSizeChains (String info, int agent) {
+
+		//a) créer un nouveau string-builder
+		StringBuilder tmpBuildChain = new StringBuilder(info);	
+		int sizInfo = info.length() ;
+
+		//b) changer la taille de la chaine
+		tmpBuildChain.setLength(sizInfo + agent);
+
+		//c) préparer la sortie des chaines
+		info = tmpBuildChain.toString();
+
+		System.out.println("\n La taille initiale de la 2e chaine était : " + sizInfo
+				+ "\n La taille est devenue : " + tmpBuildChain.length()
+				+ "\n Elle a été augmentée de : " + agent + ".");
+
+	}
+
+	//3- Modifier un caractère dans une position exacte
+	public static void changerCar (String infoCar,char c, int position) {
+
+		//a)créer un tempo string-builder pour l'infoChaine
+		StringBuilder tempo = new StringBuilder(infoCar);
+
+		//changer le caractère à la position
+		tempo.setCharAt(position, c );
+
+		//b)préparer la sortie
+		infoCar = tempo.toString();
+		//c)sortie
+		System.out.println("\nUn caractère est modifié : " + infoCar );
+
+	}
+
+	//3.1- Attacher une valeur dans une position exacte
+	public void AttachChar (String infoCar,String attach, int position) {
+
+		//a)créer un tempo string-builder pour l'infoChaine
+		StringBuilder tempo = new StringBuilder(infoCar);
+
+		//changer le caractère à la position
+		tempo.insert(position, attach );
+
+		//b)préparer la sortie
+		infoCar = tempo.toString();
+		//c)sortie
+		System.out.println("\nUne valeur a été collée dans la chaine : " + infoCar );
+
+	}
+
+
+	//4-Effacer un caractère dans une position exacte
+	public static void delCharPosX (String info,int posX) {
+
+		//créer un tempo string-builder pour l'infoChaine
+		StringBuilder tempo = new StringBuilder(info);
+		tempo.deleteCharAt(posX);
+		info = tempo.toString();
+		System.out.println("Un caractère est manquant : " + info);
+
+
+	}
+
+	//4.1- Effacer un carcatère d'une position à une autre
+	public static void delCharPosXY (String info,int posX, int posY) {
+		StringBuffer tempo = new StringBuffer(info);
+		tempo.delete(posX, posY);
+		info = tempo.toString();
+		System.out.println("Un bloc est manquant avec Builder or Buffer :" + info);
+	}
+
+
+	//5-Remplacer des caracteres d'une position à une autre
+	public static void remplaceXY(String info, String reserve, int posX,int posY) {
+		StringBuilder remplacer = new StringBuilder(info);
+		remplacer.replace(posX, posY, reserve);
+		info =	remplacer.toString();
+		System.out.println("\nUn bloc de caractères dans la chaine est remplacé :" + info);
+
+	}
+	//6- Ajouter une chaine à la fin d'une chaine
+	public void colEndChaine (String info, String colEnd) {
+
+		StringBuilder tempo = new StringBuilder(info);
+		tempo.append(colEnd);
+		info = tempo.toString();
+		System.out.println("\nUne chaine est ajoutée à la queue :" + info);
+	}
+
+	//7-Former une chaine avec d'autres chaines
+	public static String formChaine(String ch1, String ch2,String ch3,int age) {
+
+		String chaineF = null ;
+		StringBuilder bldChaine = new StringBuilder();
+		bldChaine.append(ch1)
+		.append(ch2)
+		.append(ch3)
+		.append(age);
+
+		chaineF = bldChaine.toString();
+
+		return chaineF;
+
+
+	}
+	//8-Inverser des carcteres dans une chaine
+	public static void reversMot(String mot) {
+		StringBuilder tempMot = new StringBuilder(mot);
+		tempMot.reverse();
+		mot = tempMot.toString();
+		System.out.println("\nLe revers du mot ne forme pas un palindrome: " + mot);
+	}
+
+	//9- Construire un mot de passe avec plusieurs chaines
+
+	public String passWordBld (String ch1,String ch2,String ch3,int age) {
+
+		String passWord = null;
+
+		StringBuilder passwordTemp = new StringBuilder();
+		passwordTemp.append(Character.toLowerCase(ch1.charAt(0)));
+		passwordTemp.append(Character.toLowerCase(ch2.charAt(0)));
+		passwordTemp.append(Character.toUpperCase(ch3.charAt(0)));
+
+		passwordTemp.append(age);
+
+		passWord = passwordTemp.toString();
+
+		return passWord;
+
+	}
+
+
+
+	//10- Changer le caractere en minuscule
+	public void MinuscEnMajuscule(char minusc) {
+		char temp = Character.toUpperCase(minusc) ;
+		System.out.println("\nMinuscule changé en majuscule : "
+				+ minusc + "-->" + temp  );
+
+	}
+
+	//11-  Changer le caractere en majuscule
+	public static void MajuscEnMinuscule(char majusc) {
+		char temp = Character.toLowerCase(majusc) ;
+		System.out.println("\nMajuscule changé en minuscule : "
+				+ majusc + "-->" + temp  );
+	}
+	//12- Convertir une valeur en nombre entier
+	public static void valConvertEntier(char car) {
+
+		int nbrEntier = Character.getNumericValue(car);
+		System.out.println("\nLe nombre ASCII du caractère [" + car +"] est :" + nbrEntier +".");
+
+	}
+
+	//13- remplacer les espaces par un point virgule
+
+}
+	

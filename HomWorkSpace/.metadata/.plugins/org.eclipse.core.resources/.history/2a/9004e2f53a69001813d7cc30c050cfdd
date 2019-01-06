@@ -1,0 +1,134 @@
+package VerifierPlan2;
+
+public class CharVerification {
+
+	public static void main(String[] args) {
+
+		char car1 = '8';
+		char car2 = 'A';
+		boolean confirm = false;
+		CheckPoint chk = new CheckPoint();
+
+		//1-Confirmation valeur numérique	
+		//m1
+		confirm = isCharDigit(car1);
+		if(confirm) {
+			System.out.println("C\'est une valeur numérique: " + car1);
+		}
+
+		//m2
+		if(!CheckPoint.isCarDigit(car2)) {
+			System.out.println(car2 + ": n'est pas une valeur numérique.");
+		};
+
+		//m3 - statique 
+		boolean check;
+		check = CheckPoint.isCarDigit(car2);
+		if(!check) {
+			System.out.println("\nCette valeur n'est pas numérique: " + car2);
+		};
+		
+		//m4 - non statique
+		if(chk.isThatDigit(car1)) {
+			System.out.println("\nThat is a digit value: " + car1);
+		};
+
+		//2-Confirmation valeur alphabétique?
+		if(isAlphabet(car2)) {
+			System.out.println("\nThe character << "+ car2 + " >> is an alphabet.");
+		}
+		
+		//3-Confirmation d'une valeur alphabétique ou numérique?
+		
+		if(isAlphaNum(car1));
+
+		//No Return Method
+		//4-Confirmation valeur en minuscule - void method?
+		CheckPoint.isMinuscule(car2);	
+		chk.Minuscule(car1);
+		validMinuscule(car1);
+	
+		//5-Confirmation valeur en majuscule?
+		chk.Majuscule(car2);
+		validMajuscule(car2);
+
+		//6-Confirmation qu'il s'agit d'une chaine vide?
+
+
+
+	}
+
+	//1-est-ce une valeur numérique - method static - type boolean return?
+	public static boolean  isCharDigit(char car) {
+
+		boolean confirmDigit = false;
+		if(Character.isDigit(car)) {
+			confirmDigit = true;
+		}
+		return confirmDigit;
+
+	}
+
+	//2-est-ce une valeur alphabétique?
+	public static boolean isAlphabet(char car) {
+		
+		boolean validAlph = false;
+		if(Character.isLetter(car)) {
+			validAlph = true;
+		}
+				
+		return validAlph;
+		
+	}
+
+
+	//3-est-ce une valeur alphabétique ou numérique?
+	public static boolean isAlphaNum(char car) {
+		
+		boolean validAlphNum = false;
+		if(Character.isLetterOrDigit(car)) {
+			validAlphNum = true;
+			System.out.println("\nThe character << "+ car + " >> is an alphaNumeric.");
+		}
+		
+		return validAlphNum;
+		
+		
+	}
+	//4-est-ce une valeur en minuscule -
+	// type void - No return?
+	
+	public static void  validMinuscule(char ch) {
+
+		if(Character.isLowerCase(ch)) {
+			System.out.println("\nThe character << "+ ch + " >> is a lower-case.");
+					
+		} else {
+			System.out.println("\nThe character << "+ ch + " >> is not a lower-case.");
+			
+		}
+	
+	
+	}
+
+	//5-est-ce une valeur en majuscule?
+	// Method non static - type void - No return?
+	public static void validMajuscule(char ch) {
+		if(Character.isUpperCase(ch)) {
+			System.out.println("\nThe character local << "+ ch + " >> is a upper-case.");
+			
+		}
+		else {
+			System.out.println("\nThe character << "+ ch + " >> is not a upper-case.");
+		}
+	}
+
+	
+	
+
+
+	//6-est-ce qu'il s'agit d'une chaine vide?
+
+
+
+}

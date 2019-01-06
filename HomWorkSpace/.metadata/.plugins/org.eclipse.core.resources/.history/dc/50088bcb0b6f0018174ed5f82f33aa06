@@ -1,0 +1,19 @@
+package ModifierPlan2;
+
+
+public class StrModification3 {
+
+	public static void main(String[] args) {
+		
+		String chaine = "La chaine en copie.";
+	
+	//1-remplacer la première occurence
+		 String chainOccur  = chaine.replaceFirst("ai", "ê");
+		 System.out.println("1-Remplacer la première occurence : " + chainOccur);
+		
+	//2-remplacer toutes les occurences
+		 
+		 chaine  = chaine.replaceAll("i", "y");
+		 System.out.println("1-Remplacer toutes les occurences : " + chaine);
+	}	
+}

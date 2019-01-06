@@ -1,0 +1,31 @@
+package ServerWebClient;
+
+public class ThreadStandBy extends Thread{
+	@Override
+	public void run() {
+		for (int i = 1; i<= 100; i++)
+		{
+			System.out.println(i);
+			//instructions exécutées dans un thread différent du main
+		}
+	}
+
+	
+
+	
+	Thread processus = new Thread(){
+		@Override
+		public void run(){
+			for (int i = 1; i<= 100; i++)
+			{
+				System.out.println(i);
+				//instructions exécutées dans un thread différent du main
+			}
+		}
+		
+	};
+	
+	//processus.start();
+	
+
+}

@@ -1,0 +1,66 @@
+package VerifierPlan1;
+
+public class StringVerification {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String str = "   Maisons  ";
+		//1-Vérifier la terminaison d'une chaine (boolean endsWith()).
+
+		String strCheck =str.trim();
+		String ending ="sonS";
+		String starting = "ME";
+		String contient ="ai";
+
+
+		//1-Vérifier que la chaine n'est pas vide (boolean isEmpty()).
+		if(!strCheck.isEmpty()) {
+
+			System.out.println("1-La chaine n'est pas vide");
+
+			//si le premier test est vérifié - continuer avec la condition imbriquée
+			//1.1-Vérifier la terminaison de la chaine (boolean endsWith()).
+			if(strCheck.endsWith(ending)) {
+
+				System.out.println("1.1-La chaine se termine par : \'" + ending + "\'");
+
+				//si le deuxième test est vérifié, continuer...
+				//continuité ou imbriquée les conditions suivantes lorsque les premiers choix sont validées. 
+
+				//1.2-Vérifier des valeurs dans le contenu de la chaine (boolean contains()).
+				if(strCheck.contains(contient)) {
+					System.out.println("\n1.2- Elle contient aussi les caractères: \'" + contient +"\'");
+
+					System.out.println("2.2- Pas besoin d'autres alternatifs ! ");
+				}//fin contenu
+
+			}//fin terminaison
+
+			
+			//2-alternatif ou d'autres options seulement à défaut des premiers choix
+			//2.1-Vérifier le début de la chaine (boolean startsWith()).
+
+			else if(strCheck.startsWith(starting)) {
+				System.out.println("2.1-La chaine commence par : \'" + starting + "\'");
+				System.out.println("1.3-La chaine ne se termine par : \'" + ending + "\'");
+			}
+			else {
+				System.out.println("--ERRORS!- TOUS LES TESTS ONT ÉCHOUÉ.");
+			}
+
+		} //fin vide
+		
+		//en cas d'échec de la première condition (test initial est échoué).
+		else {
+			System.out.println("1-La chaine est vide");
+		}
+
+
+		
+
+	}//fin main method
+
+
+
+}//fin class

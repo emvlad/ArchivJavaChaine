@@ -1,0 +1,43 @@
+package ServerWebClient;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+/*
+ *  @author Chrisphonte Emmanuel Vladimir et Chevry Philippe
+ */
+public class ReadFile {
+
+	private static final String FILE_PATH = "src/siteHTTP";
+
+	public static String fileR(String fileName) {
+		
+		System.out.println(FILE_PATH + fileName );
+
+		try ( BufferedReader br = new BufferedReader(new FileReader(FILE_PATH + fileName ))) {
+			
+			String content = "";
+			String readCurrentLine;
+
+			while ((readCurrentLine = br.readLine()) != null) {
+				content += readCurrentLine + "\r\n";
+			}
+			
+			return content;
+			
+
+		}
+		catch (IOException e) {
+			
+			//e.printStackTrace();
+			
+			return "Erreur 404";
+			
+			
+		}
+		
+		
+	}
+	
+}

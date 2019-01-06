@@ -1,0 +1,19 @@
+package ServerWebClient;
+
+import java.net.Socket;
+
+public class ThreadStandBy extends Thread{
+	
+	private Socket transmitSocket;
+	
+	public ThreadStandBy(Socket transmitSocket) {
+		this.transmitSocket = transmitSocket;
+	}
+	@Override
+	public void run() {
+		
+	}
+
+	
+
+}

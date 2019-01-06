@@ -1,0 +1,64 @@
+package ServerWebClient;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.Socket;
+
+public class LiaisonClient {
+	
+	Socket transmitter = null; //voie de transferts du client
+	BufferedReader entree = null; // le débit d'entrée des transferts
+	
+	
+	/**
+	 * Construire un objet qui représente une connexion du client à
+	 * partir d'une socket d'échange. Il initialise le débit d'entrée du socket.
+	 */
+	LiaisonClient(Socket transmitter) {
+		
+		this.transmitter = transmitter;
+		
+		try {
+			entree = new BufferedReader(new InputStreamReader(this.transmitter.getInputStream()));
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+		
+	}
+	
+	/**
+	 * Lire la requête HTTP se trouvant dans le débit d'entrée de
+	 * du transmetteur et l'affiche à la console
+	 */
+	
+	void getHeader() {
+		
+		String crypt = null;
+		
+		try {
+			// lire les lignes de l'entête http		
+			while ((crypt = entree.readLine()).compareTo("") != 0) {
+				System.out.println("Accept: " + crypt);
+
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	/**
+	 * Fermer le débit des transferts
+	 */
+	void closeDebit() {
+		try {
+			entree.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}
