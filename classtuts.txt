@@ -1,0 +1,6 @@
+javaScript basics for beginners - Mosh
+Object-oriented Programming in JavaScript
+Node -tutorial
+Mongodb - tutorial
+React - tutorial
+Python - tutorial
