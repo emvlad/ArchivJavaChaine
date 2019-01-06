@@ -67,10 +67,37 @@ db.students.find({"age":{$ne: "18"}}).pretty()//not equal
 //next: video 7
 
 db.students.find({"age":"19", "name":"Karen"})// ,and condition
-db.students.find({ $or :[{"name":"Karen"}, {"age":"19"}]}) //,or condition
+db.students.find({ $or :[{"name":"Vic"}, {"age":"43"}]}) //,or condition
 
+db.students.find({"name":"Karen", $or :[{"age":"19"}, {"age":"43"}]}) //,and $or same1,same2
 
+//video 8
+db.students.update({ "_id" : ObjectId("5c324a056deff29af8632ebc")},
+{$set:{"name":"Karena"}) //modify one document
+db.students.find()//verify the update
 
+db.students.update(
+{"age" :"43"},
+{$set:{"name":"HernFamily"}},
+{multi:true}
+)  //modify multiple document
+db.students.find()//verify the update
 
+//using save function to update or modify
+db.students.save(
+	{ 
+		"_id" : ObjectId("5c324a056deff29af8632ebc"), 
+		"name" : "Karena", 
+		"age" : "18"
+	}
+ )
+//add document with save functiondb.students.save(
+db.students.save(
+	{ 
+		"_id" : ObjectId("5c324a056deff29af8632eb3"), 
+		"name" : "Karenata", 
+		"age" : "18"
+	}
+ )
 
 
