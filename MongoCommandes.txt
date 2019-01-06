@@ -1,0 +1,54 @@
+==================Start Coinnection=======================
+C:\Users\Emchris>cd c:\Program Files (x86)\MongoDB\bin
+-->mongod.exe
+C:\Users\Emchris>cd c:\Program Files (x86)\MongoDB\bin
+-->mongo.exe
+================== Start GUI=======================
+-->Studio 3T <==
+name your new connection
+Save
+connect
+IntelliShell
+--------------------------------------Exo---------------------------------------
+use mydb1
+db.myCollection1.insert({"name":"Vladi"})
+show dbs
+db.dropDatabase()   ---> delete dabase
+===================Create collections methods=============================
+
+use mydb2   --->create if not exists or use it
+db.createCollection("collection2") --->create
+show collections
+
+db.collection3.insert({"name":"Karen"}) -->create if not exist and insert field+data
+
+show collections
+==================================================================
+
+db.collection2.drop() --> delete collection
+=======================================================================
+
+use school
+db.createCollection("students")
+show collections
+
+db.students.insert({"name":"Gerard", "age": "59"})
+db.students.insert({"name":"Karen", "age": "19"})
+
+db.students.insert([
+{"name":"Junior", "age": "18"},
+{"name":"Vic", "age": "26"}])
+
+db.students.find().pretty()
+
+db.students.find({"name":"Junior"})
+
+db.students.find({"age":{$gt: "50"}})
+
+db.students.find({"age":{$lt: "50"}})
+
+db.students.find({"age":{$gte: "30"}})
+db.students.find({"age":{$lte: "20"}})
+
+db.students.find({"age":{$ne: "18"}}).pretty()
+==================================Next  video 7============================
