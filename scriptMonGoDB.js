@@ -107,6 +107,13 @@ db.students.save(
  //verify
  db.students.find({ "name" :"Karenata"})
   db.students.remove({"age" : "43"}, 1) //remove the first one with that criteria
+  
+  //video 10
+  //Projection->find({}, {key:true}) //key or props to be seen truthy.
+  //select only necessary data but the whole data 
  
-
+ db.students.find({},{"name":1})//display all value for the props-key
+ 
+ //video 11
+ 
 
