@@ -115,5 +115,12 @@ db.students.save(
  db.students.find({},{"name":1})//display all value for the props-key
  
  //video 11
+ //hide IDprop and limite the number of data to display
+ db.students.find({},{"name":1, "age":1,"_id":0}) //no limite 
+ db.students.find({},{"name":1, "age":1,"_id":0}).limit(3)//limited
+  db.students.find({},{"name":1, "age":1,"_id":0}).skip(6)//skip the first (6) documents to display
+   db.students.find({},{"name":1, "age":1,"_id":0}).skip(6).limit(2)//skip and show the first 2 document skept.
+   
+ 
  
 
