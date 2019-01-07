@@ -114,13 +114,25 @@ db.students.save(
  
  db.students.find({},{"name":1})//display all value for the props-key
  
- //video 11
+ //video 11 of 22: hid_prop,limit,skip,sort document
  //hide IDprop and limite the number of data to display
- db.students.find({},{"name":1, "age":1,"_id":0}) //no limite 
+ db.students.find({},{"name":1, "age":1,"_id":0}) //no limit 
+ 
  db.students.find({},{"name":1, "age":1,"_id":0}).limit(3)//limited
+  
   db.students.find({},{"name":1, "age":1,"_id":0}).skip(6)//skip the first (6) documents to display
+   
    db.students.find({},{"name":1, "age":1,"_id":0}).skip(6).limit(2)//skip and show the first 2 document skept.
    
+   db.students.find({},{"name":1, "age":1,"_id":0}).sort({"name":1}) //ascending order
+   
+    db.students.find({},{"name":1, "age":1,"_id":0}).sort({"name":-1}) //descending order
  
  
-
+//video 12: index
+use stamps
+db.createCollection("posts")
+//there are 10000 stmpiD document with label_liberty to insert:
+for(i=1; i<10000;i++){
+	db.posts.insert({"stamp_id":i, "label": "liberty"})
+}
