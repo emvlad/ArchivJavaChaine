@@ -129,10 +129,53 @@ db.students.save(
     db.students.find({},{"name":1, "age":1,"_id":0}).sort({"name":-1}) //descending order
  
  
-//video 12: index
+//video 12 of 22: create and remove index
 use stamps
 db.createCollection("posts")
 //there are 10000 stmpiD document with label_liberty to insert:
 for(i=1; i<10000;i++){
 	db.posts.insert({"stamp_id":i, "label": "liberty"})
 }
+//how long it takes
+db.posts.find({"stamp_id":1000})
+
+//how long it takes
+db.posts.findOne({"stamp_id":1000})
+//create index_id for efficiency
+db.posts.ensureIndex({"stamp_id":1})
+//remove index_id for effisciency
+db.posts.dropIndex({"stamp_id":1})
+
+//video 13 of 22: Perform Aggregation function
+
+use school 
+db.createCollection("members")
+db.members.insert([
+			{
+				"memb_id":"1"
+				"name":"Jean",
+			"gender":"male",
+			   "age": "39"},
+			   
+			   { "memb_id":"2"
+				"name":"Lyna",
+			"gender":"female",
+			   "age": "49"},
+			   
+			   { "memb_id":"3"
+				"name":"Myrlene",
+			"gender":"female",
+			   "age": "29"},
+			   
+			   { "memb_id":"4"
+				"name":"Rico",
+			"gender":"male",
+			   "age": "19"},
+			     { "memb_id":"4"
+				"name":"Herlo",
+			"gender":"male",
+			   "age": "26"}
+			])
+db.members.find()//verify collection
+//create aggregat $sum : $group _id:target, report $sum of male and female members.
+ db.members.aggregate([{$group:{_id:"$gender", Report:{$sum:1}}}])
