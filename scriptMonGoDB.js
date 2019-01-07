@@ -99,5 +99,14 @@ db.students.save(
 		"age" : "18"
 	}
  )
+ 
+ //video 9 of 22
+ //handle with care 'remove()' document - make condition
+ 
+ db.students.remove({"_id" : ObjectId("5c324a056deff29af8632eb3")})
+ //verify
+ db.students.find({ "name" :"Karenata"})
+  db.students.remove({"age" : "43"}, 1) //remove the first one with that criteria
+ 
 
 
