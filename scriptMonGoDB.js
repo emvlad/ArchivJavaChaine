@@ -27,9 +27,10 @@ db.createCollection("students")
 show collections
 
 //delete a collection or a current database 
-db.students.drop()
+db.students.drop()//db.collectionName.drop()
 db.teachers.drop()
-db.dropDatabase()
+db.dropDatabase()//the current database
+
 
 //add one document
 db.teachers.insert({"name":"Corrine", "age": "35"})
@@ -179,3 +180,29 @@ db.members.insert([
 db.members.find()//verify collection
 //create aggregat $sum : $group _id:target, report $sum of male and female members.
  db.members.aggregate([{$group:{_id:"$gender", Report:{$sum:1}}}])
+ //create aggregat $max of male and female members
+ db.members.aggregate([{$group:{_id:"$gender", MaxAge:{$max:"$age"}}}])
+ 
+ //create aggregat $min of male and female members
+ db.members.aggregate([{$group:{_id:"$gender", 'Min Age':{$min:"$age"}}}])
+ 
+ //video 14 of 22: BackUp files
+ C:\Program Files (x86)\MongoDB\bin>mongodump //will create the backup folders
+
+ //test
+use stamps
+db.dropDatabase()//accidently stamps is dropped
+show.dbs
+ 
+ //restore - admin privilege
+  C:\Program Files (x86)\MongoDB\bin>mongorestore
+  show dbs
+  
+  //backup for a specific database
+ C:\Program Files (x86)\MongoDB\bin>mongodump --db school //will create the backup for specific data
+ //restore
+  C:\Program Files (x86)\MongoDB\bin>mongorestore --db school dump/school
+ 
+ //backup for a specific collection
+ C:\Program Files (x86)\MongoDB\bin>mongodump --db school --collection members
+  
