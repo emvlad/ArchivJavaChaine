@@ -205,4 +205,11 @@ show.dbs
  
  //backup for a specific collection
  C:\Program Files (x86)\MongoDB\bin>mongodump --db school --collection members
+  //restore
+   C:\Program Files (x86)\MongoDB\bin>mongorestore --db school --collection members dump/school/members.bson
+  
+  
+  //video 15 of 22: 
+  
+  
   
