@@ -62,3 +62,132 @@ strings.setContent(Object.assign({},strings.getLocaleObject(),
     choice:"How to choose the egg"
   }
 }));
+
+==================case 2=========================
+add :react developer tools
+
+1- $ yarn add react-intl
+2-dans app:
+import{IntlProvider} from "react-intl";
+3-dans render(){
+	const{lang } = this.props;
+return(
+ <IntlProvider locale={lang} messages={message[lang]}> 
+ <div>
+ 
+ </div>
+ </IntlProvider>)
+ 
+ 4-dans index:
+ import {addLocaleData} from "react-intl";
+ import en from "react-intl/locale-data/en";
+ import fr from "react-intl/locale-data/fr";
+ import messages from "./messages";
+ 
+ addLocaleData(en);
+ addLocaleData(fr);
+ 
+ 5-dans TopNavigation
+ import {FormatedMessage} from "react-intl";
+ 
+ <NavLink>
+ <FormatedMessage id="nav.dashboard defaultMessage="Dashboard">
+ </NavLink>
+ 
+ 7-app.propTypes={
+ 
+ lang:PropTypes.string.isRequired,
+ 
+ }
+  
+ 6-function mapStateToProps(state){
+ return{
+ lang:state.locale.lang}
+ 
+ 8-go to folder Reducer to rootReducer.js
+ 
+ import user from "./reducers/user";
+ import locale from "./reducers/locale";
+ 
+ export default combineReducers({
+ user,locale})
+ 
+ 9- to locale.js
+ export default function locale(state={lang:"fr"},action={}){
+ switch(action.type){
+  default:return state;}
+ }
+
+10-create dans le folder utils
+messages.js
+export default{
+en:{
+'nav.dashboard':"Dashboard"
+
+},
+fr:{
+'nav.dashboard':"Tableau de bord"
+}
+}
+
+11-find where to put the link:
+dans TopNavigation
+<Nav>
+<a> role="button" onClick={()=>this.props.setLocale('fr')}>Français</a>
+<a> role="button" onClick={()=>this.props.setLocale('en')}>}> English</a>
+
+</Nav>
+
+12-go to navigation folder
+import {setLocale} from "../../actions/locale";
+
+
+TopNavigation.propTypes={
+setLocale:PropTypes.func.isRequired,
+}
+
+export default connect(mapStateToProps,{logout:action.logout,setLocale},null){
+ pure:false
+})(TopNavigation);
+
+13-go to actions folder
+create locale.js
+
+import {LOCALE_SET } from "../types";
+
+
+export const localeSet = lang =>({
+type:LOCALE_SET,
+lang
+})
+
+export const setLocale = lang =>(dispatch)=>{
+localStorage.allang =lang;
+dispatch(localeSet(lang));
+}
+
+14-go to types to add
+
+export const LOCALE_SET ="LOCALE_SET";
+
+15-go to reducers/localelocale.js
+
+import {LOCALE_SET} from "../types";
+
+export default function locale(state ={lang:"fr"},action ={}){
+switch(action.type{
+case LOCALE_SET:
+return{lang:action.lang};
+default:
+return state;}
+}
+
+16-go to the main index.js
+
+import {localeSet} from "./actions/locale";
+
+if(localeStorage.allang){
+store.dispatch(localeSet(localeStorage.allang));
+}
+
+
