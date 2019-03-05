@@ -1,0 +1,11 @@
+ {
+   "data":[
+       { "id":1,  "name": "Jed", "birthplace": "P-au-P", "stmp":1000000 },
+       { "id" :2, "name": "Laure", "birthplace": "Pétion Ville", "stmp":600000 },
+       { "id":3,  "name": "Fred", "birthplace": "Cayes","stmp":800000 },
+       { "id":4,  "name": "Viom", "birthplace": "Montreal" ,"stmp":400000},
+       { "id":5, "name": "Hems", "birthplace": "New Jersey" ,"stmp":1000000}
+    ]
+} 
+
+
