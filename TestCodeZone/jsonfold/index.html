@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Test Code Zone JSON</title>
+
+</head>
+
+<body>
+
+  <!-- Step 1 -->
+  <h4> What you got... </h4>
+
+  <ol id="idhook"> </ol>
+  <ul id="idho"> </ul>
+
+  <table >
+    <thead align="center"> Personnel
+      <tr> <th> No.&nbsp</th>
+           <th> Nom Complet</th>
+      <tr>
+        </thead>
+        <tr> <td >1 </td><td >... </td></tr>
+        <tr> <td >2 </td><td >...</td></tr>
+        <tr> <td >3 </td><td >...</td></tr>
+  </table>
+
+
+
+
+  <script type="text/javascript">
+
+  /*
+    console.log("step1: Create HTML - What you got...")
+    <!-- Step 2 -->
+    console.log("step2: Hello, welcome Vlad !")
+    <!-- Step 3 -->
+    var doorslipt={
+      id: 1000,
+      name:"Vlaunior Karminy",
+      age:36,
+      email:function(){
+        return 'Laurivio@yahoo.fr'
+      }
+    };
+    console.log("step3.1.0: Display doorslipt:", doorslipt.name);
+    console.log("step3.1.1: Display doorslipt:", doorslipt.email());
+    <!-- Step 3.1 -->
+    var doorslipArray=[{
+      id: "c01000t1",
+      name:"Laurivio Jedina",
+      age:46
+    }];
+    console.log("step3.1: Display doorslipArray1:", doorslipArray);
+
+    <!-- Step 3.2 -->
+    var doorslipArray=[{
+      id: "c01000t1",
+      name:"Laurivio Jedina",
+      age:46
+    },
+    {
+      id: "c12000t1",
+      name:"Myrcha Friday",
+      age:52
+
+    }]
+    console.log("step3.2: Display doorslipArray2:", doorslipArray);
+
+    <!-- Step 4 -->
+    var doorsliptpars={
+      id: 1000,
+      name:"Vlaunior Karminy",
+      age:36,
+      email:"Laurivio@yahoo.fr"
+    };
+
+    doorsliptpars = JSON.stringify(doorsliptpars);
+    console.log("step 4: Display doorsliptJSON.stringify:", doorsliptpars);
+
+    <!-- Step 5 -->
+    var doorsonArray=[{
+      "id": "c01000t4",
+      "name":"Viom Jedina",
+      "age":46
+    },
+    {
+      "id": "c12000t4",
+      "name":"Laurmyrcha Friday",
+      "age":28
+    },
+    {
+      "id": "c20200t4",
+      "name":"Hems Chris",
+      "age":23
+    }
+    ];
+    console.log("step5: Display doorsonArray3:", doorsonArray);
+
+    <!-- Step 5.1 -->
+    var doorsonArray=[{
+      "id": "c01000t4",
+      "name":"Viom Jedina",
+      "age":46
+    },
+    {
+      "id": "c12000t4",
+      "name":"Laurmyrcha Friday",
+      "age":28
+    },
+    {
+      "id": "c20200t4",
+      "name":"Hems Chris",
+      "age":23
+    }
+    ];
+
+    doorsonArray = JSON.stringify(doorsonArray);
+
+    console.log("step5.1: Display doorsonJSon.stringifyArray3:", doorsonArray);
+
+    <!-- Step 5.1.1 -->
+    var doorsonArray=[{
+      "id": "c01000t4",
+      "name":"Viom Jedina",
+      "age":46
+    },
+    {
+      "id": "c12000t4",
+      "name":"Laurmyrcha Friday",
+      "age":28
+    },
+    {
+      "id": "c20200t4",
+      "name":"Hems Chris",
+      "age":23
+    }
+    ];
+
+    doorsonArray = JSON.stringify(doorsonArray);
+    <!-- turn back into an object -->
+    doorsonArray = JSON.parse(doorsonArray);
+    console.log("step5.1.1: Display doorsonJSon.parse2ObjectArray3:", doorsonArray);
+    console.log("step5.1.2: Display doorsonJSon.parse2ObjectArray3:", doorsonArray[0].name);
+
+
+    <!-- Step 6 -->
+    var doorslipts={
+      id: 1000,
+      name:"Vlaunior Karminy",
+      age:36,
+      email:"Laurivio@yahoo.fr",
+      address:{
+        street:"9860 Ouest",
+        city:"New Jersey"
+      },
+      family:["Mommy", "Daddy", "Little Boy"]
+
+    };
+    console.log("step6.1.0: Display doorslipts:", doorslipts.family);
+    console.log("step6.1.1: Display doorslipts:", doorslipts.address.street);
+    console.log("step6.1.2: Display doorslipts:", doorslipts.family[0]);
+
+    <!-- Step 7 -->
+    var doorscArrays=[{
+      id: "c01000t7",
+      name:"Lol Often ",
+      age:43
+    },
+    {
+      id: "c12000t7",
+      name:"Selly Toudec",
+      age:29
+    },
+    {
+      id: "c20200t7",
+      name:"Forlong Timy",
+      age:33
+    }
+    ];
+
+    console.log("step7.0: Display doorscArrays7:", doorscArrays[1]);
+    console.log("step7.1: Display doorscArrays7:", doorscArrays);
+
+   console.log("step7.2: Display LoopdoorscArrays7:");
+
+    for(var i = 0; i <doorscArrays.length; i++ ){
+        console.log( doorscArrays[i]);
+      }
+     console.log("step7.3: Display LoopdoorscArrays7:");
+    for(var k = 0; k <doorscArrays.length; k++ ){
+        console.log( doorscArrays[k].name);
+    } ;
+
+    <!-- Step 8 -->
+    var doorArrayson=[{
+      "id": "c01000t7",
+      "name":"Trully Toyou ",
+      "age":43
+    },
+    {
+      "id": "c12000t7",
+      "name":"Elie Copter",
+      "age":29
+    },
+    {
+      "id": "c20200t7",
+      "name":"Lachemes Basket",
+      "age":33
+    }
+    ];
+
+    console.log("step8.0: Display doorArrayson8:", doorArrayson[1]);
+    console.log("step8.1: Display doorArrayson8:", doorArrayson);
+
+   console.log("step8.2: Display LoopdoorArrayson8:");
+
+    for(var i = 0; i <doorArrayson.length; i++ ){
+        console.log(doorArrayson[i]);
+      };
+    console.log("step8.3: Display doorArrayson8:");
+
+    for(var k = 0; k <doorArrayson.length; k++ ){
+        console.log( doorArrayson[k].name);
+    };
+      var outthato ='';
+      var outthat ='';
+    for(var h = 0; h <doorArrayson.length; h++ ){
+      outthat += '<li>' +doorArrayson[h].name+ '</li>';
+      outthato += '<li>' +doorArrayson[h].name+ '</li>';
+
+    };
+    document.getElementById('idhook').innerHTML = outthat;
+    document.getElementById('idho').innerHTML = outthato;
+
+*/
+
+//api request the browser has XMLHttpRequest that we put in a variable
+ console.log("step9: Display filedoorArrayson9:");
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+           // Typical action to be performed when the document is ready:
+          // document.getElementById("demo").innerHTML = xhttp.responseText;
+
+           //console.log( xhttp.responseText);
+           //var response= xhttp.responseText;
+           //var response= JSON.parse(xhttp.responseText);
+           //console.log( response.filedoorArrayson);
+
+           var response= JSON.parse(xhttp.responseText);
+           var filedoorArrayson = response.filedoorArrayson;
+
+           var outthis ='';
+           for(var h = 0; h <filedoorArrayson.length; h++ ){
+           outthis += '<li>' +filedoorArrayson[h].name+ '</li>';
+        }
+        // Typical action to be performed when the document is ready:
+        document.getElementById("idhook").innerHTML = outthis;
+
+      }
+    };
+    xhttp.open("GET", "filedoorArrayson.json", true);
+    xhttp.send();
+
+  </script>
+
+
+
+</body>
+
+
+
+
+
+</html>
